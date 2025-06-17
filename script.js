@@ -44,10 +44,18 @@ for (let button of answerButtons) {
 function showQuestion(questionIdx) {
     questionDiv.innerText = questions[questionIdx].text;
 
-    for (let i = 0; i < answerButtons.length; i++) {
-        let answerToDisplay = questions[questionIdx].answers[i][0];
-        answerButtons[i].innerText = answerToDisplay;
-        answerButtons[i].dataset.correct = questions[questionIdx].answers[i][1];
+    try {
+        if (questions[questionIdx].answers.length !== 4) {
+            throw "invalid number of answers";
+        }
+        for (let i = 0; i < answerButtons.length; i++) {
+            let answerToDisplay = questions[questionIdx].answers[i][0];
+            answerButtons[i].innerText = answerToDisplay;
+            answerButtons[i].dataset.correct = questions[questionIdx].answers[i][1];
+        }
+    }
+    catch(err) {
+        console.log(err);
     }
 }
 
