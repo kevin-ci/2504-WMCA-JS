@@ -1,0 +1,28 @@
+#question {
+    font-size: xx-large;
+}
+
+.answer {
+    border: 1px solid black;
+    padding: 20px;
+    transition: transform .2s;
+}
+
+.answer:hover {
+    transform: scale(1.05);
+    background-color: antiquewhite;
+}
+
+#next {
+    border: 1px solid black;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#next:hover {
+    background-color: lightgreen;
+}
+
+.hidden {
+    display: none;
+}
